@@ -1,0 +1,49 @@
+# For more information, check out the plugin manual or join us on Discord:
+# http://www.mythicmobs.net
+#  
+
+RegeneracionDeVida:
+  Conditions:
+  - incombat{} false
+  Skills:
+  - healpercent{m=0.1}
+AtaquePoderoso:
+  Cooldowm: 15
+  Skills:
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.3} @self
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.6} @self
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.9} @self
+  - basedamage{m=0}
+  - throw{velocity=35;velocityY=0}
+  - velocity{m=multiply;x=1;y=0;z=1}
+  - sound{s=entity.donkey.hurt;p=0.1}
+ItemTimer:
+  Conditions:
+  - score{obj=ItemTimer;v=>0} true
+  Skills:
+  - modifytargetscore{obj=ItemTimer;a=SUBTRACT;v=1} @Self
+CDMessage1:
+  Conditions:
+  - score{obj=ItemTimer;v=>0} true
+  Skills:
+  - actionmessage{m="Ability on cooldown - &1<target.score.ItemTimer> &fseconds"} @Self
+  - delay 25
+  - skill{s=CDMessage2} @Self
+CDMessage2:
+  Conditions:
+  - score{obj=ItemTimer;v=0}
+  Skills:
+  - actionmessage{m="Ability Ready"} @Self
+AutoIgnite:
+  Conditions:
+  - score{obj=ItemTimer;v=0} true
+  Skills:
+  - ignite{t=100} @trigger
+  - modifytargetscore{obj=ItemTimer;a=SET;v=10} @Self
+  - actionmessage{m="Attack - &4&1Ignite"} @Self
+InvocacionTormenta:
+  Cooldowm: 40
+  Skills:
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.3}
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.6}
+  - effect:particlering{particle=flame;radius=2;points=32;amount=1;hS=0;vS=0;y=0.9}

@@ -1,0 +1,28 @@
+# For more information, check out the plugin manual or join us on Discord:
+# http://www.mythicmobs.net
+#  
+
+SpawnBabyMercenario:
+  Action: REPLACE
+  Type: BabyMercenario
+  Level: 1
+  Chance: 0.3
+  Priority: 50
+  UseWorldScaling: false
+  Worlds: world
+  Conditions:
+   - inblock{b=WATER,LAVA} false
+
+SpawnMercenario:
+  Action: REPLACE
+  Type: Mercenario
+  Level: 1
+  Chance: 0.2
+  Priority: 50
+  UseWorldScaling: false
+  Worlds: world
+  Conditions:
+   - inblock{b=WATER,LAVA} false
+
+
+
