@@ -1,5 +1,7 @@
 
 # ArmaduraFuego
+
+#CascosFuego
 CascoFuegoE:
   Id: NETHERITE_HELMET
   Display: "&5Casco de &4Fuego"
@@ -16,6 +18,7 @@ CascoFuegoE:
     OffHand:
       Health: -2
 
+#PecherasFuego
 PecheraFuegoE:
   Id: NETHERITE_CHESTPLATE
   Display: "&5Pechera de &4Fuego"
@@ -32,6 +35,7 @@ PecheraFuegoE:
     OffHand:
       Health: -5
 
+#PantalonesFuego
 PantalonesFuegoE:
   Id: NETHERITE_LEGGINGS
   Display: "&5Pantalones de &4Fuego"
@@ -48,6 +52,7 @@ PantalonesFuegoE:
     OffHand:
       Health: -4
 
+#BotasFuego
 BotasFuegoE:
   Id: NETHERITE_BOOTS
   Display: "&5Botas de &4Fuego"
