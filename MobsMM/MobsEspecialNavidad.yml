@@ -93,7 +93,7 @@ ElGrinch:
 
 Badkids:
   Type: BABY_ZOMBIE
-  Disguise: Badkids
+  Disguise: BadkidsSkin
   Health: 20
   Damage: 5
   Options:
