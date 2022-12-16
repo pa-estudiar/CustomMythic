@@ -81,3 +81,22 @@ PantalonesCongelado:
 
 BotasCongelado:
   Id: NETHERITE_BOOTS
+
+#ArmaduraHeal
+CascoHeal:
+  Id: IRON_HELMET
+  Diplay: "&5Casco de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5comun"
+  Attributes: 
+    Head:
+      MovementSpeed: 0.01
+      Armor: 2-5
+    MainHand:
+      Health: -1
+    OffHand:
+      Health: -2
+
+PecheraHeal:
+  Id: 
