@@ -2,112 +2,84 @@
 
 BeginnerQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Beginner Quest Chest"
+  Display: "Beginner Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2JhNzc4NTZkODBkYWRlNTU2OTk1NDRkZGNkNjg1OTY0YjAxODA4MjNmZTRmZjI3MGRlN2U1ZjU4YWVjZjNhNSJ9fX0=
 
 StandardQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Standard Quest Chest"
+  Display: "Standard Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNTZkN2ZkYjUwZjE0YzczMWM3MjdiMGUwZDE4OWI2YTg3NDMxOWZjMGQ3OWM4YTA5OWFjZmM3N2M3YjJkOTE5NiJ9fX0=
 
 MightyQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Mighty Quest Chest"
+  Display: "Mighty Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGQ2YTYwZTU3OTlmNGVkYjFiZjUyZGY0OTQ3NGQ3YjQyOGM5NjRlNGE5NDEzMjhlMjQxYTFlYWI5NjAyNTg2OSJ9fX0=
 
 CrystallizedEpicQuestChest: 
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Crystallized Epic Quest Chest"
+  Display: "Crystallized Epic Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzI4NWRkNzdjNjRlMjM2OGZlNzdjMzFmZjdjM2Q0MmI3MDBmYjdiNzRmMmI0NjNlNjk2OTE2YzkwZjVkMjdhYiJ9fX0=
 
 HoneyedEpicQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Honeyed Epic Quest Chest"
+  Display: "Honeyed Epic Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2Q2MDUzNGUyMmUzNzE0NzVkNTQzNGQwZjQ5YWUwNThkMzk0MWIwM2E3YzUwYTZlZWYyOTYyMGM2OTI3NzhlMCJ9fX0=
 
 RoyalEpicQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Royal Epic Quest Chest"
+  Display: "Royal Epic Quest Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDUxYTVlOTUyNGU1ZGMzZDlmYTEzZmYzOTVlYjY4MjRmMjY3NjE1NTZhNjY5YTZiYTk0MDI5MGZkY2JiNjBmNSJ9fX0=
 
 CultishEpicQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Cultish Epic Quest Chest"
+  Display: "CultishEpicQuestChest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTQwZDEyN2E5MmQwYjNkNWI1YTMyYWRkNjdkZGY3ZGI5OGMxYWQ3ZDU0OTE5NDk0NjYyZThkZWFlYjRhMGQ0MiJ9fX0=
 
 MarbleEpicQuestChest: 
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Marble Epic Quest Chest"
+  Display: 'Marble Epic Quest Chest'
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1OTI0MDJhMjk0ZWZlZDNiOGI2ZTU5YTUzYzJmYmU3MWVhYmQ4NWVkMDVmYTZiMGIwYmFhMDQzMDNjMDg2ZiJ9fX0=
 
 VoidedEpicQuestChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Voided Epic Quest Chest"
+  Display: 'Voided Epic Quest Chest'
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDQ1MjQwZmNmMWE5Nzk2MzI3ZGRhNTU5Mzk4NTM0M2FmOTEyMWE3MTU2YmM3NmUzZDZiMzQxYjAyZTZhNmU1MiJ9fX0=
 
 Barrel:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Barrel"
+  Display: 'Barrel'
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDFiMzM5NjFhMWM5ODgxN2Q3MWZiYWUyOTMzMmYzNjVlZTYwYjI4YjZiYTY4MzZjYjA2MDlkNmQwNzFjMDhkYSJ9fX0=
 
 NetherQuartzChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Nether Quartz Chest"
+  Display: 'Nether Quartz Chest'
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmZhZmUwNmZlMzI4YTI1YjViZGM3ZjA3OGJmOTM1OGViYWQyNWQ5MTQ5NTkxMTM4MmZjNDMyNWVkODg0MjhkMiJ9fX0=
 
 BlazeChest: 
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Blaze Chest"
+  Display: "Blaze Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTlhNzRhOGE2YWViZmY3MTIxZDFhODhkYjFiY2E2Yzc1ZjAxMzJjOTU4YjI1YjZkNGM3OWNlZDE0NDI2YmRlIn19fQ==
 
 GlowstoneChest:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Glowstone Chest"
+  Display: "Glowstone Chest"
   Options:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhiZGM3YTFkNmNmZjc2YTkyNTU2NTJkMzE2NTUzMjI4NWFjYzNhOWQxYzBmMTJmMzljYTAwNzc2OWE3ZWExNCJ9fX0=
 
 EmptyClayPot:
   Id: PLAYER_HEAD
-  Display:
-  Lore:
-  - "&7Empty ClayPot"
+  Display: "Empy Clay Pot"
   Opctions:
     SkinTexture: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDNkYWM4YmMwZGE0ZWVjYWJhY2UwZWRlNWZhNmFiNzU3M2YyYjYyMDliNWFjODhhYzUwOTQzZTU3ZDhiMTcwYSJ9fX0=
