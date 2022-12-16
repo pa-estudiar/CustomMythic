@@ -1,0 +1,78 @@
+
+# ArmaduraFuego
+CascoFuegoE:
+  Id: NETHERITE_HELMET
+  Display: "&5Casco de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Head:
+      Health: 1-2
+      Armor: 4-7
+      KnockbackResistance: 10%
+    MainHand:
+      Health: -1
+    OffHand:
+      Health: -2
+
+PecheraFuegoE:
+  Id: NETHERITE_CHESTPLATE
+  Display: "&5Pechera de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Pechera"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Chest:
+      Health: 4-6
+      Armor: 10-16
+      KnockbackResistance: 10%
+    MainHand:
+      Health: -4
+    OffHand:
+      Health: -5
+
+PantalonesFuegoE:
+  Id: NETHERITE_LEGGINGS
+  Display: "&5Pantalones de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Legs:
+      Health: 3-4
+      Armor: 7-11
+      KnockbackResistance: 10%
+    MainHand:
+      Health: -3
+    OffHand:
+      Health: -4
+
+BotasFuegoE:
+  Id: NETHERITE_BOOTS
+  Display: "&5Botas de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Feet:
+      Health: 2-3
+      Armor: 5-8
+      KnockbackResistance: 10%
+    MainHand:
+      Health: -2
+    OffHand:
+      Health: -3
+
+# ArmaduraCongelada
+CascoCongelado:
+  Id: NETHERITE_HELMET
+
+PecheraCongelado:
+  Id: NETHERITE_CHESTPLATE
+
+PantalonesCongelado:
+  Id: NETHERITE_LEGGINGS
+
+BotasCongelado:
+  Id: NETHERITE_BOOTS
