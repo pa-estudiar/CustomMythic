@@ -1,0 +1,20 @@
+EvokeBadkids:
+  Cooldown: 35
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - summon{type=Badkids;a=5;r=3;yr=0} @PIR{r=30}
+  - sound{s=entity.wither.spawn;p=1.5} @Self
+BadkidsPassive1:
+  Skills:
+  - effect:particles{particle=reddust;color=#33FF42;amount=5;y=1;hs=0.3;vs=0.3} @Self
+BadkidsPassive2:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - potion{type=CONFUSION;duration=60;force=true} @trigger
+  - potion{type=SLOW;duration=40;force=true} @trigger
+  - remove @Self
+BadkidsPassive3:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - remove @Self
