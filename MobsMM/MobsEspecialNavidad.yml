@@ -1,0 +1,113 @@
+# setDynamicName true
+
+Yeti:
+  Type: ZOMBIE
+  Display: '&CYeti &8[&flvl <caster.level>&8]'
+  Health: 100
+  Damage: 6
+  Faction: Grinch
+  BossBar:
+    Enabled: true
+    Style: SOLID
+    Title: '&8&lYeti &f- &4&l<mob.hp>'
+    Color: BLUE
+  Disguise: YetiSkin
+  Options:
+    AlwaysShowName: true
+    Despawn: true
+    KnockbackResistance: 0.15
+    MovementSpeed: 0.1
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    Equipment:
+  -  HEAD
+  -  CHEST
+  -  LEGS
+  -  FEET
+  -  HAND
+  LevelModififiers:
+    Health: 5
+    Damame: 0.05
+  Skills:
+  - skill{skill=RegenariocDeVida} @self ~onTimer:40
+    AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+
+ElGrinch:
+  Type: ZOMBIE
+  Display: '&CEl Grinch &8[&flvl <caster.level>&8]'
+  Health: 200
+  Damage: 10
+  Faction: Grinch
+   BossBar:
+    Enabled: true
+    Style: SOLID
+    Title: '&8&lGrinch &f- &4&l<mob.hp>'
+    Color: GREEN
+  Disguise: ElGrinchSkin
+   Options:
+    AlwaysShowName: true
+    Despawn: true
+    KnockbackResistance: 0.2
+    MovementSpeed: 0.15
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  Equipment:
+  -  HEAD
+  -  CHEST
+  -  LEGS
+  -  FEET
+  -  HAND
+  LevelModififiers:
+    Health: 10
+    Damage: 0.1
+  Skills:
+  - skill{skill=RegenaracionDeVida} @self ~onTimer:40
+  - randomskill{skills=EvokeBadkids,ReleaseGravity} @Self ~onTimer:200
+  - skill{s=ReleaseGravity} @Self ~onInteract
+  - skill{s=EvokeBadkids} @Self ~onInteract
+    AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+
+Badkids:
+  Type: BABY_ZOMBIE
+  Disguise: Badkids
+  Health: 20
+  Damage: 5
+  Options:
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Silent: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  Skills:
+  - skill{s=BadkidsPassive1} @Self ~onTimer:2
+  - skill{s=BadkidsPassive2} @Self ~onAttack
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+  - skill{s=BadkidsPassive3} @Self ~onDeath

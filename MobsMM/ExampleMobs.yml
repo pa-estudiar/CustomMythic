@@ -1,7 +1,3 @@
-# For more information, check out the plugin manual or join us on Discord:
-# http://www.mythicmobs.net
-#  
-
 BabyMercenario:
   Type: BABY_ZOMBIE
   Display: '&CBaby Mercanario &8[&Flvl <caster.level>&8]'
@@ -218,7 +214,6 @@ Bandido:
   Modules:
     ThreatTable: true
   Drops:
-  
   LevelModififiers:
     Health: 2
     Damame: 0.05
