@@ -92,11 +92,54 @@ CascoHeal:
   Attributes: 
     Head:
       MovementSpeed: 0.01
-      Armor: 2-5
+      Armor: 2-3
     MainHand:
       Health: -1
     OffHand:
       Health: -2
 
 PecheraHeal:
-  Id: 
+  Id: IRON_CHESTPLATE
+  Diplay: "&5Pechera de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Pechera"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Chest:
+      Regeneration: 0.02
+      Armor: 3-5
+    MainHand: 
+       Health: -1
+    OffHand: 
+      Health: -2
+
+PantalonHeal:
+  Id: IRON_LEGGINGS
+  Diplay: "&5Pantalon de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Pantalon"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Legs:
+      Regeneration: 0.02
+      Armor: 2-4
+    MainHand: 
+       Health: -1
+    OffHand: 
+      Health: -2
+
+BotasHeal:
+  Id: IRON_BOOTS
+  Diplay: "&5Botas de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Botas"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Feet:
+      Regeneration: 0.02
+      Double_Jump 2: 0.02
+      Armor: 1-2
+    MainHand: 
+       Health: -1
+    OffHand: 
+      Health: -2
