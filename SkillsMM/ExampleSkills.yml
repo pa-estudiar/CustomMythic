@@ -13,6 +13,8 @@ AtaquePoderoso:
   - throw{velocity=35;velocityY=0}
   - velocity{m=multiply;x=1;y=0;z=1}
   - sound{s=entity.donkey.hurt;p=0.1}
+
+# Items Customs
 ItemTimer:
   Conditions:
   - score{obj=ItemTimer;v=>0} true

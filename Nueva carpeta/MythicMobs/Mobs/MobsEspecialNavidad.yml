@@ -1,0 +1,239 @@
+# setDynamicName true
+
+Yeti:
+  Type: ZOMBIE
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Yeti &1[&A<caster.hp>&C<&heart>&1]'
+  Health: 100
+  Damage: 6
+  Faction: Grinch
+  BossBar:
+    Enabled: false
+    Style: SOLID
+    Title: '&8&lYeti &f- &4&l<mob.hp>'
+  Disguise: YetiSkin
+  Options:
+    AlwaysShowName: true
+    Despawn: true
+    KnockbackResistance: 1
+    MovementSpeed: 0.2
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  LevelModififiers:
+    Health: 5
+    Damame: 0.05
+  Skills:
+  - skill{skill=RegenariocDeVida} @self ~onTimer:40
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+
+ElGrinch:
+  Type: ZOMBIE
+  Display: '&1[&FLvl. &D<caster.level>&1] &2El Grinch &1[&A<caster.hp>&C<&heart>&1]'
+  Health: 1000
+  Damage: 10
+  Faction: Grinch
+  BossBar:
+    Enabled: true
+    Style: SOLID
+    Title: '&8&lGrinch &f- &4&l<mob.hp>'
+    Color: GREEN
+  Disguise: ElGrinchSkin
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    Despawn: false
+    KnockbackResistance: 1
+    MovementSpeed: 0.22
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  LevelModififiers:
+    Health: 10
+    Damage: 0.1
+  Skills:
+  - skill{s=BossesLevelModifier} @PIR{r=40} ~onSpawn
+  - skill{skill=RegenaracionDeVida} @self ~onTimer:40
+  - randomskill{skills=InvocacionBadkids,AlInfinitoYMasAlla,Barrera} @Self ~onTimer:200
+  - skill{s=ReleaseGravity} @Self ~onInteract
+  - healpercent{m=0.05} @Self ~onPlayerKill
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 specificfaction Imperio
+  - 3 attacker
+
+Badkids:
+  Type: BABY_ZOMBIE
+  Disguise: BadkidsSkin
+  Health: 20
+  Damage: 5
+  Options:
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Silent: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  Skills:
+  - skill{s=BadkidsPassive1} @Self ~onTimer:2
+  - skill{s=BadkidsPassive2} @Self ~onAttack
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+  - skill{s=BadkidsPassive3} @Self ~onDeath
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+
+FrozenIronGolem:
+  Type: IRON_GOLEM
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Frozen Iron Golem &1[&A<caster.hp>&C<&heart>&1]'
+  Health: 500
+  Damage: 8
+  Faction: Nevado
+#  BossBar:
+#    Enabled: true
+#    Title: 'Frozen Iron Golem - <mob.hp>'
+#    Range: 30
+#    Color: BLUE
+#    Style: SOLID
+#    CreateFog: true
+  Disguise: FrozenIronGolemSkin
+  Options:
+    AlwaysShowName: true
+    FollowRange: 40
+    Despawn: false
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  LevelModififiers:
+    Health: 10
+    Damame: 0.5
+  Skills:
+  - skill{s=FrozenIronGolemPassive} @Self ~onTimer:2
+  - setlevel{a=set;l=10-20} ~onSpawn
+  - skill{skill=RegeneracionDeVida} @self ~onTimer:40
+  - setvariable{var=caster.ataqueBloqueado;value=0} @self ~onSpawn
+  - randomskill{skills=SaltoCongelado,SmashAttack} @self ~onTimer:40
+  - skill{s=SmashAttack} @target >0 0.2
+  - skill{skill=AtaqueFrozenIronGolem;sync=true} @self ~onAttack
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 specificfaction Imperio
+  - 3 attacker
+
+ZombieCongelado:
+  Type: HUSK
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zombie Congelado &1[&A<caster.hp>&C<&heart>&1]'
+  Health: 40
+  Damage: 7
+  Faction: Nevado
+  Disguise: ZombieCongeladoSkin
+  Options:
+    FollowRange: 40
+    AlwaysShowName: true
+    Despawn: false
+    KnockbackResistance: 1
+    MovementSpeed: 0.2
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  LevelModififiers:
+    Health: 2
+    Damame: 0.4
+  Skill:
+  - setlevel{a=set;l=10-20} ~onSpawn
+  - skill{skill=RegeneracionDeVida} @self ~onTimer:40
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+
+HechiceroCongelado:
+  Type: WITHER_SKELETON
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Hechicero Congelado &1[&A<mob.hp>&C<&heart>&1]'
+  Health: 500
+  Damage: 10
+  Faction: Nevado
+  Disguise: HechiceroCongeladoSkin
+  Skills:
+  - speak{m="Nadie podra contra mi!";cooldown=20} @PlayersInRadius{r=40} ~onCombat > 0 0.2
+  - speak{m="JAJAJAJJAJ! Al lobby pa, <trigger.name>!"} @PlayersInRadius{r=40} ~onPlayerKill > 0 1
+  - randomskill{skills=Invocaciones,LanzamientoCongelado,Barrera} @self ~onTimer:80
+  - skill{s=BossesLevelModifier} @PIR{r=40} ~onSpawn
+  Equipment:
+  - GrimorioDefensaE HAND
+  Options:
+    FollowRange: 40
+    AlwaysShowName: true
+    Despawn: false
+    KnockbackResistance: 1
+    MovementSpeed: 0.2
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  LevelModififiers:
+    Health: 10
+    Damame: 0.2
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0

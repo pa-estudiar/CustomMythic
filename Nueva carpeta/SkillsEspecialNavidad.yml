@@ -1,0 +1,198 @@
+BossesLevelModifier:
+  Conditions:
+  - targets{a=2} castinstead BLM2
+  - targets{a=3} castinstead BLM3
+  - targets{a=4} castinstead BLM4
+  - targets{a=5} castinstead BLM5
+  Skills:
+BLM2:
+  Skills:
+  - setlevel{a=set;l=2} @Self
+BLM3:
+  Skills:
+  - setlevel{a=set;l=3} @Self
+BLM4:
+  Skills:
+  - setlevel{a=set;l=4} @Self
+BLM5:
+  Skills:
+  - setlevel{a=set;l=5} @Self
+AlInfinitoYMasAlla:
+  Skills:
+  - sound{s=entity.allay.death;v=10;p=0.2} @Self
+  - aura{i=1;oT=AlInfinitoYMasAllaTick;duration=20} @PIR{r=10}
+  - velocity{m=SET;x=0;y=1.5;z=0} @PIR{r=10}
+  - velocity{m=SET;x=0;y=-2;z=0;delay=20} @PIR{r=40}
+AlInfinitoYMasAllaTick:
+  Skills:
+  - effect:particles{particle=spit;a=25;hs=0.2;y=0.3;color=#33FF42} @origin
+InvocacionBadkids:
+  Cooldown: 40
+  Skills:
+  - summon{type=Badkids;a=5;r=3;yr=0} @PIR{r=30}
+  - sound{s=entity.allay.death;v=10;p=0.01} @Self
+BadkidsPassive1:
+  Skills:
+  - effect:particles{particle=reddust;color=#33FF42;amount=5;y=1;hs=0.3;vs=0.3} @Self
+BadkidsPassive2:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1;color=#33FF42} @Self
+  - potion{type=CONFUSION;duration=600;force=true} @trigger
+  - potion{type=SLOW;duration=40;force=true} @trigger
+  - remove @Self
+BadkidsPassive3:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1;color=#33FF42} @Self
+  - remove @Self
+
+# FrozenIronGolem
+FrozenIronGolemPassive:
+  Skills:
+  - effect:particles{particle=reddust;color=#fff;amount=5;y=1;hs=0.3;vs=0.3} @Self
+SaltoCongelado:
+  Skills:
+  - skill{skill=SaltoCongeladoInicio} @PlayersInRadius{r=20;limit=1;sort=FURTHEST}
+SaltoCongeladoInicio:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=20} true
+  TragetConditions:
+  - distance{d=>7}
+  Skills:
+  - setVariable{var=caster.ataqueBloqueado;value=1} @self
+  - message{m="&7Frozen Iron Golem usa &bSalto Coneglado&7!"} PIR{r=30}
+  - jump{velocity=1}
+  - Aura{auraName=EfectoSaltoCongelado;onTick=EfectoSaltoCongelado;interval=3;duration=12} @self
+  - sound{s=entity.snow_golem.shoot;v10} @SelfLocation
+  - delay 10
+  - leap{velocity=500}
+  - potion{type=CONFUSION;duration=40;level=10;hasParticles=false} @self
+  - delay 10
+  - effect:particles{particle=snowflake;a=200;hs=0.5;vs=0.5;s=0.2} @self
+  - sound{s=entity.snow_golem.hurt;v10;p=0.1} @SelfLocation
+  - damage{a=4-6} @PIR{r=4}
+  - throw{velocity=0;velocityY=8} @PIR{r=4}
+  - delay 20
+  - setvariable{var=caster.ataqueBloqueado;value=0} @self
+EfectoSaltoCongelado:
+  Skills:
+  - effect:particlering{particle=cloud;radius=1;points=32;amount=1;hS=0;vS=0;y=0.1} @self
+AtaqueFrozenIronGolem:
+  Conditions:
+  - varEquals{var=caster.ataqueBloqueado;value=1} true
+  Skills:
+  - CancelEvent
+SmashAttack:
+  Cooldown: 8
+  Conditions:
+  - targetwithin {d=25} true
+  Skills:
+  - message{cooldown=30;m="<mob.name><&co> &fHULK APLASTA!"} @PlayersInRadius{r=40}
+  - teleport @PlayersInRadius{r=20;limit=1;sort=FURTHEST}
+  - effect:sound{s=mob.endermen.portal;volume=1.0;pitch=0.5}
+  - delay 10
+  - damage{amount=5;ignorearmor=true} @PlayersInRadius{r=20;limit=1;sort=FURTHEST}
+  - throw{velocity=10;velocityY=5} @PlayersInRadius{r=20;limit=1;sort=FURTHEST}
+  - effect:explosion @Self
+# MagoHechiceroCongelado
+LanzamientoCongelado:
+  Cooldown: 15
+  Conditions: 
+  - targetwithin{d=22} true
+  - targetwithin{d=8} false
+  Skills:
+  - skill{skill=LanzamientoCongeladoInicio}
+LanzamientoCongeladoInicio:
+  Skills:
+  - message{m="&7Hechicero Congelado usa &bLanzamiento Congelado&7!"} PIR{r=30}
+  - stun{d=30} @self
+  - delay 10
+  - projectile{onTick=LanzamientoCongeladoTick;onHit=LanzamientoCongeladoHit;onEnd=LanzamientoCongeladoEnd;v=18;i=1;hR=2;vR=2;vO=1.5;hO=1;g=1.2} @PlayersInRadius{r=20;limit=1;sort=RANDOM}
+  - delay 10
+  - projectile{onTick=LanzamientoCongeladoTick;onHit=LanzamientoCongeladoHit;onEnd=LanzamientoCongeladoEnd;v=18;i=1;hR=2;vR=2;vO=1.5;hO=1;g=1.2} @PlayersInRadius{r=20;limit=1;sort=RANDOM}
+  - delay 10
+  - projectile{onTick=LanzamientoCongeladoTick;onHit=LanzamientoCongeladoHit;onEnd=LanzamientoCongeladoEnd;v=18;i=1;hR=2;vR=2;vO=1.5;hO=1;g=1.2} @PlayersInRadius{r=20;limit=1;sort=RANDOM}
+  - delay 10
+  - projectile{onTick=LanzamientoCongeladoTick;onHit=LanzamientoCongeladoHit;onEnd=LanzamientoCongeladoEnd;v=18;i=1;hR=2;vR=2;vO=1.5;hO=1;g=1.2} @PlayersInRadius{r=20;limit=1;sort=RANDOM}
+  - delay 10
+  - projectile{onTick=LanzamientoCongeladoTick;onHit=LanzamientoCongeladoHit;onEnd=LanzamientoCongeladoEnd;v=18;i=1;hR=2;vR=2;vO=1.5;hO=1;g=1.2} @PlayersInRadius{r=20;limit=1;sort=RANDOM}
+LanzamientoCongeladoTick:
+  Skills:
+  - effect:particles{particle=block;m=blue_ice;amount=20;hS=0.1;vS=0.1;speed=0} @origin
+  - effect:itemspray{item=BLUE_ICE;amount=4;velocity=0.01;d=20} @origin
+  - sound{s=block.amethyst_block.break;v10} @origin
+LanzamientoCongeladoHit:
+  Skills:
+  - damage{a=10}
+  - potion{type=LEVITATION;duration=40;level=3;hasParticles=false}
+LanzamientoCongeladoEnd:
+  SKills:
+  - effect:enderbeam{d=100;y=2} @origin
+Barrera:
+  Cooldown: 5
+  Conditions:
+  - targetwithin{d=3} true
+  Skills:
+  - skill{skill=BarreraInicio} @target
+BarreraInicio:
+  Skills:
+  - message{m="&7<mob.name> &bBarrera&7!"} PIR{r=30}
+  - stun{d=30} @self
+  - effect:particlesphere{particle=sonic_boom;amount=300;radius=3.5;color=#82a1b1} @selfLocation
+  - damage{d=6}
+  - potion{type=WITHER;duration=40;level=0;hasParticles=false}
+  - throw{velocity=35;velocityY=0}
+  - velocity{m=multiply;x=1;y=0;z=1}
+Invocaciones:
+  Cooldown: 200
+  Skills:
+  - message{m="<mob.name><&co> &fDefendedme hijos mios!"} @PlayersInRadius{r=40}
+  - delay 20
+  - summon{mob=ZombieCongelado;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolem;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolem;amount=2;noise=5} @Self
+
+# Zona de Pilares Congelados
+InvocacionesLvl1:
+  Cooldown: 300
+  Skills:
+  - message{m="<mob.name><&co> &fDefendedme hijos mios!"} @PlayersInRadius{r=40}
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl1;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolemLvl1;amount=2;noise=5} @Self
+  
+InvocacionesLvl2:
+  Cooldown: 200
+  Skills:
+  - message{m="<mob.name><&co> &fDefendedme hijos mios!"} @PlayersInRadius{r=40}
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl2;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolemLvl2;amount=2;noise=5} @Self
+  
+InvocacionesLvl3:
+  Cooldown: 200
+  Skills:
+  - message{m="<mob.name><&co> &fDefendedme hijos mios!"} @PlayersInRadius{r=40}
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl3;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl3;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolemLvl3;amount=2;noise=5} @Self
+  
+InvocacionesLvl4:
+  Cooldown: 200
+  Skills:
+  - message{m="<mob.name><&co> &fDefendedme hijos mios!"} @PlayersInRadius{r=40}
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl4;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=ZombieCongeladoLvl4;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolemLvl4;amount=2;noise=5} @Self
+  - delay 20
+  - summon{mob=FrozenIronGolemLvl4;amount=2;noise=5} @Self

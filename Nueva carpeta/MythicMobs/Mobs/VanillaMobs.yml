@@ -1,0 +1,115 @@
+CAVE_SPIDER:
+  Health: 45
+  Damage: 7
+  Display: '&1[&FLvl. &D<caster.level>&1] &Cave Spider &1[&A<caster.hp>&C<&heart>&1]'
+  Options:
+    AlwaysShowName: true
+    Despawn: false
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  Skills:
+  - potion{type=POISON;duration=100;lvl=1} @target ~onAttack
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+
+WITHER_SKELETON:
+  Health: 100
+  Damage: 10
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Wither Skeleton &1[&A<caster.hp>&C<&heart>&1]'
+  Options:
+    AlwaysShowName: true
+    Despawn: false
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  Skills:
+  - potion{type=WITHER;duration=100;lvl=1} @target ~onAttack
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+GIANT:
+  Health: 1000
+  Damage: 20
+  Options:
+    AlwaysShowName: true
+    Despawn: false
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  Skills:
+  - potion{type=POISON;duration=100;lvl=1} @target ~onAttack
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker
+GHAST:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Ghast &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Damage: 22.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 specificfaction Imperio
+  - 3 attacker
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Ghast'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.30-45>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath

@@ -1,0 +1,141 @@
+
+# ArmaduraFuego
+
+#CascosFuego
+CascoFuegoE:
+  Id: NETHERITE_HELMET
+  Display: "&5Casco de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Head:
+      Health: 10
+      Armor: 7
+      KnockbackResistance: 20%
+    MainHand:
+      Health: -1
+    OffHand:
+      Health: -2
+
+#PecherasFuego
+PecheraFuegoE:
+  Id: NETHERITE_CHESTPLATE
+  Display: "&5Pechera de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Pechera"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Chest:
+      Armor: 13
+    MainHand:
+      Health: -4
+    OffHand:
+      Health: -5
+
+#PantalonesFuego
+PantalonesFuegoE:
+  Id: NETHERITE_LEGGINGS
+  Display: "&5Pantalones de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Pantalones"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Legs:
+      Armor: 12
+      KnockbackResistance: 15%
+    MainHand:
+      Health: -3
+    OffHand:
+      Health: -4
+
+#BotasFuego
+BotasFuegoE:
+  Id: NETHERITE_BOOTS
+  Display: "&5Botas de &4Fuego"
+  Lore:
+  - "&7Tipo: &EArmadura/Botas"
+  - "&7Calidad: &5Epica"
+  Attributes:
+    Feet:
+      Armor: 6
+      KnockbackResistance: 10%
+    MainHand:
+      Health: -2
+    OffHand:
+      Health: -3
+
+# ArmaduraCongelada
+CascoCongelado:
+  Id: NETHERITE_HELMET
+
+PecheraCongelado:
+  Id: NETHERITE_CHESTPLATE
+
+PantalonesCongelado:
+  Id: NETHERITE_LEGGINGS
+
+BotasCongelado:
+  Id: NETHERITE_BOOTS
+
+#ArmaduraHeal
+CascoHeal:
+  Id: IRON_HELMET
+  Diplay: "&5Casco de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Casco"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Head:
+      MovementSpeed: 0.01
+      Armor: 2-3
+    MainHand:
+      Health: -1
+    OffHand:
+      Health: -2
+
+PecheraHeal:
+  Id: IRON_CHESTPLATE
+  Diplay: "&5Pechera de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Pechera"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Chest:
+      Regeneration: 0.02
+      Armor: 3-5
+    MainHand:
+       Health: -1
+    OffHand:
+      Health: -2
+
+PantalonHeal:
+  Id: IRON_LEGGINGS
+  Diplay: "&5Pantalon de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Pantalon"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Legs:
+      Regeneration: 0.02
+      Armor: 2-4
+    MainHand:
+       Health: -1
+    OffHand:
+      Health: -2
+
+BotasHeal:
+  Id: IRON_BOOTS
+  Diplay: "&5Botas de &4Curacion"
+  Lore:
+  - "&7Tipo: &EArmadura/Botas"
+  - "&7Calidad: &5comun"
+  Attributes:
+    Feet:
+      Regeneration: 0.02
+      Double_Jump 2: 0.02
+      Armor: 1-2
+    MainHand:
+       Health: -1
+    OffHand:
+      Health: -2

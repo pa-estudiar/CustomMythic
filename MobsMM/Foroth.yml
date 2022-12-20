@@ -97,7 +97,7 @@ ShadowFractureMob:
 Foroth:
   Type: ZOMBIE
   Display: "&8&lForoth"
-  Health: 500
+  Health: 6000
   Damage: 10
   Faction: Foroth
   BossBar:

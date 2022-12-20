@@ -10,31 +10,24 @@ Yeti:
     Enabled: true
     Style: SOLID
     Title: '&8&lYeti &f- &4&l<mob.hp>'
-    Color: BLUE
   Disguise: YetiSkin
   Options:
     AlwaysShowName: true
     Despawn: true
-    KnockbackResistance: 0.15
-    MovementSpeed: 0.1
+    KnockbackResistance: 1
+    MovementSpeed: 0.2
     PreventItemPickup: true
     PreventOtherDrops: true
     PreventRandomEquipment: true
     PreventSunburn: true
     PreventJockeyMounts: true
     PreventTransformation: true
-    Equipment:
-  -  HEAD
-  -  CHEST
-  -  LEGS
-  -  FEET
-  -  HAND
   LevelModififiers:
     Health: 5
     Damame: 0.05
   Skills:
   - skill{skill=RegenariocDeVida} @self ~onTimer:40
-    AIGoalSelectors:
+  AIGoalSelectors:
   - 0 clear
   - 1 meleeattack
   - 2 fleesun
@@ -47,49 +40,38 @@ Yeti:
 ElGrinch:
   Type: ZOMBIE
   Display: '&CEl Grinch &8[&flvl <caster.level>&8]'
-  Health: 200
+  Health: 1000
   Damage: 10
   Faction: Grinch
-   BossBar:
+  BossBar:
     Enabled: true
     Style: SOLID
     Title: '&8&lGrinch &f- &4&l<mob.hp>'
     Color: GREEN
   Disguise: ElGrinchSkin
-   Options:
+  Options:
     AlwaysShowName: true
     Despawn: true
-    KnockbackResistance: 0.2
-    MovementSpeed: 0.15
+    KnockbackResistance: 1
+    MovementSpeed: 0.22
     PreventItemPickup: true
     PreventOtherDrops: true
     PreventRandomEquipment: true
     PreventSunburn: true
     PreventJockeyMounts: true
     PreventTransformation: true
-  Equipment:
-  -  HEAD
-  -  CHEST
-  -  LEGS
-  -  FEET
-  -  HAND
   LevelModififiers:
     Health: 10
     Damage: 0.1
   Skills:
+  - skill{s=GrinchLevelModifier} @PIR{r=40} ~onSpawn
   - skill{skill=RegenaracionDeVida} @self ~onTimer:40
   - randomskill{skills=EvokeBadkids,ReleaseGravity} @Self ~onTimer:200
   - skill{s=ReleaseGravity} @Self ~onInteract
   - skill{s=EvokeBadkids} @Self ~onInteract
-    AIGoalSelectors:
-  - 0 clear
-  - 1 meleeattack
-  - 2 fleesun
-  - 3 randomstroll
-  AITargetSelectors:
-  - 0 clear
-  - 1 players
-  - 2 attacker
+  - skill{s=GrinchVeil} @MIR{types=EvokeBadkids;r=40} ~onTimer:10
+  - skill{s=GrinchSet} @MIR{types=EvokeBadkids;r=40} ~onTimer:10
+  - healpercent{m=0.05} @Self ~onPlayerKill
 
 Badkids:
   Type: BABY_ZOMBIE
@@ -111,3 +93,82 @@ Badkids:
   - skill{s=BadkidsPassive2} @Self ~onAttack
   - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
   - skill{s=BadkidsPassive3} @Self ~onDeath
+
+
+FrozenIronGolem:
+  Type: IRON_GOLEM
+  Display: '&CFrozen Iron Golem &8[&flvl <caster.level>&8]'
+  Health: 500
+  Damage: 8
+  Faction: Nevado
+  BossBar:
+    Enabled: true
+    Title: 'Frozen Iron Golem - <mob.hp>'
+    Range: 30
+    Color: BLUE
+    Style: SOLID
+    CreateFog: true
+  Disguise: FrozenIronGolemSkin
+  Options:
+    AlwaysShowName: true
+    Despawn: false
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  LevelModififiers:
+    Health: 10
+    Damame: 0.5
+  Skills:
+  - skill{s=FrozenIronGolemPassive} @Self ~onTimer:2
+  - setlevel{a=set;l=10-20} ~onSpawn
+  - skill{skill=RegeneracionDeVida} @self ~onTimer:40
+  - setvariable{var=caster.ataqueBloqueado;value=0} @self ~onSpawn
+  - randomskill{skills=SaltoCongelado} @self ~onTimer:40
+  - skill{skill=AtaqueFrozenIronGolem;sync=true} @self ~onAttack
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 specificfaction Imperio
+  - 3 attacker
+
+ZombieCongelado:
+  Type: HUSK
+  Display: ""
+  Health: 40
+  Damage: 7
+  Faction: Nevado
+  Disguise: ZombieCongeladoSkin
+  Options:
+    AlwaysShowName: true
+    Despawn: true
+    KnockbackResistance: 1
+    MovementSpeed: 0.2
+    PreventItemPickup: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventSunburn: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+  LevelModififiers:
+    Health: 2
+    Damame: 0.4
+  Skill:
+  - 
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeattack
+  - 2 fleesun
+  - 3 randomstroll
+  AITargetSelectors:
+  - 0 clear
+  - 1 players
+  - 2 attacker

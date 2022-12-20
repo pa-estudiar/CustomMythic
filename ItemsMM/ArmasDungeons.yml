@@ -1,0 +1,47 @@
+# HerramientasFuego
+EspadaFuegoL:
+  Id: NETHERITE_SWORD
+  Display:
+  Lore:
+  - "&7Tipo: &EArmas/Espada"
+  - "&7Calidad: &6Lengedaria"
+  - "&7SI lo llevas como escudo, te da suerte"
+  Enchantments:
+  - FIRE_ASPECT:2
+  - LOOT_BONUS_MOBS:2
+  Repairable: false
+  HideFlags: false
+  Unbreakable: false
+  Attributes:
+    MainHand:
+      Damage: 13-15
+      AttackSpeed: -0.60
+      MovementSpeed: 0.015
+    OffHand:
+       Luck: 4
+       Health: 2
+
+EspadaFuegoE:
+  Id: DIAMOND_SWORD
+  Display:
+  Lore:
+  - "&7Tipo: &EArmas/Espada"
+  - "&7Calidad: &5Epicas"
+  - "&7SI lo llevas como escudo, te da suerte"
+  Enchantments:
+  - FIRE_ASPECT:1
+  - LOOT_BONUS_MOBS:1
+  HideFlags: false
+  Unbreakable: false
+  Attributes:
+    MainHand:
+      Damage: 10-12
+      AttackSpeed: -0.60
+      MovementSpeed: 0.01
+     OffHand:
+       Luck: 2
+       Health: 1
+  
+  # HerramientasCongeladas
+EspadaCongelada:
+  Id: NETHERITE_SWORD

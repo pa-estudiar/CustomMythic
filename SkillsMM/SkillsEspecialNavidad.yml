@@ -1,0 +1,94 @@
+GrinchLevelModifier:
+  Conditions:
+  - targets{a=2} castinstead GLM2
+  - targets{a=3} castinstead GLM3
+  - targets{a=4} castinstead GLM4
+  - targets{a=5} castinstead GLM5
+  Skills:
+GLM2:
+  Skills:
+  - setlevel{a=set;l=2} @Self
+GLM3:
+  Skills:
+  - setlevel{a=set;l=3} @Self
+GLM4:
+  Skills:
+  - setlevel{a=set;l=4} @Self
+GLM5:
+  Skills:
+  - setlevel{a=set;l=5} @Self
+ 
+EvokeBadkids:
+  Cooldown: 35
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - summon{type=Badkids;a=5;r=3;yr=0} @PIR{r=30}
+  - sound{s=entity.wither.spawn;p=1.5} @Self
+BadkidsPassive1:
+  Skills:
+  - effect:particles{particle=reddust;color=#33FF42;amount=5;y=1;hs=0.3;vs=0.3} @Self
+BadkidsPassive2:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - potion{type=CONFUSION;duration=600;force=true} @trigger
+  - potion{type=SLOW;duration=40;force=true} @trigger
+  - remove @Self
+BadkidsPassive3:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - remove @Self
+
+GrinchVeil:
+  Conditions:
+  - targets{a=>0} true
+  Skills:
+  - potion{type=INVISIBILITY;duration=23;force=true;p=false} @Self
+  - potion{type=WEAKNESS;duration=23;level=10;force=true;p=false} @Self
+  - potion{type=DAMAGE_RESISTANCE;duration=23;level=10;force=true;p=false} @Self
+  - potion{type=SLOW;duration=23;level=10;force=true;p=false} @Self
+
+GrinchSet:
+  Conditions:
+  - targets{a=0} true
+  Skills:
+  - setstance{s=Combat} @Self
+
+# FrozenIronGolem
+FrozenIronGolemPassive:
+  Skills:
+  - effect:particles{particle=reddust;color=#fff;amount=5;y=1;hs=0.3;vs=0.3} @Self
+SaltoCongelado:
+  Skills:
+  - skill{skill=SaltoCongeladoInicio} @PlayersInRadius{r=20;limit=1;sort=FURTHEST}
+SaltoCongeladoInicio:
+  Cooldown: 10
+  Conditions:
+  - targetwithin{d=20} true
+  TragetConditions:
+  - distance{d=>7}
+  Skills:
+  - setvariable{var=caster.ataqueBloqueado;value=1} @self
+  - message{m="&7Frozen Iron Golem usa &bSalto Coneglado&7!"} PIR{r=30}
+  - jump{velocity=1}
+  - Aura{auraName=EfectoSaltoCongelado;onTick=EfectoSaltoCongelado;interval=3;duration=12} @self
+  - sound{s=entity.snow_golem.shoot;v10} @SelfLocation
+  - delay 10
+  - leap{velocity=500}
+  - potion{type=SLOW_FALLING;duration=40;level=10;hasParticles=false} @self
+  - delay 10
+  - effect:particles{particle=snowflake;a=200;hs=0.5;vs=0.5;s=0.2} @self
+  - sound{s=entity.snow_golem.hurt;v10;p=0.1} @SelfLocation
+  - damage{a=4-6} @PIR{r=4}
+  - throw{velocity=0;velocityY=8} @PIR{r=4}
+  - delay 20
+  - setvariable{var=caster.ataqueBloqueado;value=0} @self
+EfectoSaltoCongelado:
+  Skills:
+  - effect:particlering{particle=cloud;radius=1;points=32;amount=1;hS=0;vS=0;y=0.1} @self
+AtaqueFrozenIronGolem:
+  Conditions:
+  - varEqueals{var=caster.ataqueBloqueado;value=1} true
+  Skills:
+  - CancelEvent
+  

@@ -1,0 +1,1603 @@
+# For more information, check out the plugin manual or join us on Discord:
+# http://www.mythicmobs.net
+#  
+ZOMBIFIED_PIGLIN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zombified Piglin &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 12
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Zombified Piglin'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.6-9>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+BAT:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Bat &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 6
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Bat'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+BEE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Bee &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'   #This is bugged. It says Zombified_Piglin instead of bee, so it must be pulling its Display from there. 
+  Health: 10
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Bee'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+BLAZE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Blaze &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Blaze'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+CAT:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Cat &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Cat'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+CAVE_SPIDER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Cave Spider &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 12
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Cave Spider'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.6-9>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+CHICKEN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Chicken &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 4
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Chicken'
+  Drops:
+  - mmoitems{type=SWORD;id=STEEL_SWORD} 1 1
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+COD:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Cod &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Cod'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+COW:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Cow &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Cow'
+  Drops:
+  - mmoitems{type=SWORD;id=STEEL_SWORD} 1 1
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+CREEPER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Creeper &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 64
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Creeper'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.5-8>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+DOLPHIN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Dolphin &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Damage: 4.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Dolphin'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+DONKEY:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Donkey &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 15
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Donkey'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+DROWNED:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Drowned &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 4.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Drowned'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ELDER_GUARDIAN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Elder Guardian &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 80
+  Damage: 12
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Elder Guardian'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.50-80>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ENDER_DRAGON:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Ender Dragon &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 200
+  Damage: 15
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Ender Dragon'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.150-200>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ENDERMAN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Enderman &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 40
+  Damage: 10.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Enderman'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.15-23>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ENDERMITE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Endermite &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 8
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Endermite'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.4-7>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+EVOKER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Evoker &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 24
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Evoker'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.20-30>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+FOX:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Fox &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Fox'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+GHAST:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Ghast &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Damage: 22.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Ghast'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.30-45>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+GUARDIAN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Guardian &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 30
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Guardian'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.10-15>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+HOGLIN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Hoglin &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 40
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Hoglin'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+HORSE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Horse &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 25
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Horse'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+HUSK:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Husk &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 4.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Husk'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ILLUSIONER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Illusioner &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 32
+  Damage: 5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Illusioner'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.20-30>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+IRON_GOLEM:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Iron Golem &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 100
+  Damage: 25
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to an &2Iron Golem'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.15-28>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+LLAMA:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Llama &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 25
+  Damage: 1
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Llama'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.3-6>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+MUSHROOM_COW:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Mooshroom Cow &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Mooshroom'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+MULE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Mule &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 25
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Mule'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+OCELOT:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Ocelot &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Ocelot'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PANDA:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Panda &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Panda'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PARROT:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Parrot &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 6
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Parrot'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PHANTOM:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Phantom &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Phantom'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.15-23>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PIG:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Pig &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Pig'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PIGLIN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Piglin &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 16
+  Damage: 12
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Piglin'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PIGLIN_BRUTE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Piglin Brute &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 50
+  Damage: 19
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Piglin Brute'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.13-18>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PILLAGER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Pillager &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 24
+  Damage: 5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Pillager'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+POLAR_BEAR:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Polar Bear &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 30
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Polar Bear'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.13-18>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+PUFFERFISH:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Pufferfish &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 3
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Pufferfish'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+RABBIT:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Rabbit &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Rabbit'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+RAVAGER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Ravager &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 100
+  Damage: 18
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Ravager'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.30-45>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SALMON:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Salmon &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Salmon'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SHEEP:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Sheep &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 8
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Sheep'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SHULKER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Shulker &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 30
+  Damage: 4
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Shulker'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.25-40>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SILVERFISH:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Silverfish &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 8
+  Damage: 1.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Silverfish'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SKELETON:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Skeleton &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 4
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Skeleton'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.6-9>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SKELETON_HORSE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Skeleton Horse &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 15
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Skeleton Horse'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SLIME:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Slime &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 8
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Slime'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.3-5>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SNOWMAN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Snowman &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 4
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Snowman'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SPIDER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Spider &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 16
+  Damage: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Spider'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.5-8>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+SQUID:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Squid &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 10
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Squid'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+STRAY:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Stray &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Stray'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+STRIDER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Strider &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Strider'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.3-6>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+TRADER_LLAMA:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Trader Llama &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 25
+  Damage: 1
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Trader Llama'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.3-6>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+TROPICAL_FISH:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Tropical Fish &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 3
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Tropical Fish'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+TURTLE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Turtle &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 30
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Turtle'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+VEX:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Vex &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 14
+  Damage: 13
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Vex'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+VILLAGER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Villager &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Villager'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+VINDICATOR:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Vindicator &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 24
+  Damage: 19
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Vindicator'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.8-12>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+WANDERING_TRADER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Wandering Trader &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Wandering Trader'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.1-2>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+WITCH:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Witch &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 26
+  Damage: 6
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Witch'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.10-15>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+WITHER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Wither &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 300
+  Damage: 12
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Wither'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.120-175>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+WITHER_SKELETON:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Wither Skeleton &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 12
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Wither Skeleton'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.15-20>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+WOLF:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Wolf &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 8
+  Damage: 6
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Wolf'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.3-6>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ZOGLIN:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zoglin &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 40
+  Damage: 9
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Zoglin'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ZOMBIE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zombie &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 4.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Zombie'
+  Drops:
+  - mmoitems{type=SWORD;id=STEEL_SWORD} 1 1
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.5-8>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ZOMBIE_HORSE:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zombie Horse &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 15
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Zombie Horse'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.2-4>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath
+ZOMBIE_VILLAGER:
+  Display: '&1[&FLvl. &D<caster.level>&1] &2Zombie Villager &1[&A<caster.hp>&F/&A<caster.mhp>&C<&heart>&1]'
+  Health: 20
+  Damage: 4.5
+  Faction: Vanilla
+  DamageModifiers:
+  - FALL 0
+  - SUFFOCATION 0
+  - DROWNING 0
+  AITargetSelectors:
+  - 0 clear
+  - 1 attacker
+  - 2 players
+  - 3 OtherFactionMonsters
+  KillMessages:
+  - '&6<target.name> &Fdied to a &2Zombie Villager'
+  Modules:
+    ThreatTable: true
+  Options:
+    PreventItemPickup: true
+    NoDamageTicks: 10
+  Skills:
+  - setname{name=<caster.name>;delay=2} @self ~onDamaged
+  - setname{name=<caster.name>;delay=2} @self ~onTimer:10
+  - setvariable{var=caster.myExp;value=(<random.6-9>*(1 + <caster.level>*0.05))} @self ~onSpawn
+  - skill{s=GiveMMOCoreMainClassExp} @trigger ~onDeath

@@ -1,0 +1,79 @@
+#
+#  ClassLevel: 1
+General:
+  Version: 1
+  DisplayName: '&bDungeon Bajo la Oscuridad'
+  ShowTitleOnStart: true
+  Lobby:
+    Enabled: false
+    Location:
+      ==: org.bukkit.Location
+      x: -124.4827797942941
+      y: -33.0
+      z: 113.72410118688332
+      pitch: 39.60006
+      yaw: -43.703857
+  Gamemode: SURVIVAL
+  PlayerLives: 4
+  DeadPlayersSpectate: true
+  KeepInventoryOnEnter: true
+  KeepHealthOnEnter: false
+  KeepFoodOnEnter: false
+  KeepPotionEffectsOnEnter: false
+  KickOfflinePlayers: true
+  KickOfflinePlayersDelay: 420
+  MaxBackups: 3
+  MaxInstances: 1
+  GiveLootAfterCompletion: false
+  LootCooldown:
+    Enabled: true
+    PerReward: true
+    CooldownType: WEEKLY
+    CooldownTime: 0
+    ResetDay: 4
+  AccessCooldown:
+    Enabled: false
+    CooldownType: DAILY
+    CooldownTime: 3
+    ResetDay: 1
+  StartLocation:
+    ==: org.bukkit.Location
+    x: -124.34847974628309
+    y: -33.0
+    z: 113.69140315172132
+    pitch: 12.150034
+    yaw: -52.800255
+Requirements:
+  Permissions: []
+  MinPartySize: 1
+  MaxPartySize: 6
+  DungeonsComplete: []
+  Cost: 150
+AccessKeys:
+  Consume: true
+  KeyItems: []
+Rules:
+  SpawnMobs: false
+  SpawnAnimals: false
+  SpawnMonsters: false
+  AllowBreakBlocks: false
+  AllowPlaceBlocks: false
+  AllowEnderpearl: false
+  AllowChorusFruit: false
+  AllowBucket: false
+  PreventPlantGrowth: true
+  PvP: false
+  HideDeathMessages: false
+  AllowedCommands:
+  - party
+  - dparty
+  - p
+  - dungeon leave
+  - md leave
+  - leave
+  - spawn
+  BannedItems: []
+  CustomBannedItems: []
+  AllowPickupBannedItems: false
+  AllowCraftBannedItems: false
+  AllowStorageBannedItems: false

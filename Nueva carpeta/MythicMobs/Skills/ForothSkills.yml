@@ -1,0 +1,337 @@
+SpawnForoth:
+  Skills:
+  - effect:particletornado{particle=largesmoke;mr=3;height=1.25;i=1;duration=200;rs=1;sh=2;cp=smoke;cyo=0.1;cps=0.1;a=2;yo=0;s=0.1} @Self
+  - effect:lightning @Self
+  - effect:lightning{repeat=1;repeatInterval=10;delay=30} @Self
+  - effect:lightning{repeat=3;repeatInterval=5;delay=75} @Self
+  - delay 100
+  - projectile{oT=ReleaseGravityTick;i=1;vO=90;oE=SpawnForoth2;v=10;mr=25;sE=false;sB=false} @Forward{f=0}
+
+SpawnForoth2:
+  Skills:
+  - effect:particles{particle=hugeexplode} @origin
+  - sound{s=block.end_portal.spawn;v=2;p=0.5} @origin
+  - summon{type=Foroth} @origin
+  - delay 100
+  - remove @Self
+
+ForothSpawn:
+  Skills:
+  - setstance{s=Spawning} @Self
+  - effect:particlesphere{particle=largesmoke;a=50;s=0.1;r=3;repeat=99;repeatInterval=1;y=0.5} @Self
+  - potion{type=DAMAGE_RESISTANCE;level=10;duration=120;p=false;force=true} @Self
+  - potion{type=SLOW_FALLING;duration=120;p=false;force=true} @Self
+  - potion{type=SLOW;level=10;duration=120;p=false;force=true} @Self
+  - setstance{s=Combat;delay=120} @Self
+  - effect:particles{p=smoke;s=0.2;a=500;hs=3;vs=0;y=0.1;delay=110} @self
+
+ForothLevelModifier:
+  Conditions:
+  - targets{a=2} castinstead FLM2
+  - targets{a=3} castinstead FLM3
+  - targets{a=4} castinstead FLM4
+  - targets{a=5} castinstead FLM5
+  Skills:
+FLM2:
+  Skills:
+  - setlevel{a=set;l=2} @Self
+FLM3:
+  Skills:
+  - setlevel{a=set;l=3} @Self
+FLM4:
+  Skills:
+  - setlevel{a=set;l=4} @Self
+FLM5:
+  Skills:
+  - setlevel{a=set;l=5} @Self
+  
+####################################################################################
+ShadowRepel:
+  Skills:
+  - effect:particlesphere{particle=reddust;color=#000000;r=2.5;y=0.5;a=300;} @Self
+  - damage{a=2} @PIR{r=3}
+  - sound{s=block.ender_chest.open;p=0.75} @Self
+  - throw{v=15;vy=2} @PIR{r=3}
+####################################################################################
+ShadowVeil:
+  Conditions:
+  - targets{a=>0} true
+  Skills:
+  - potion{type=INVISIBILITY;duration=23;force=true;p=false} @Self
+  - potion{type=WEAKNESS;duration=23;level=10;force=true;p=false} @Self
+  - potion{type=DAMAGE_RESISTANCE;duration=23;level=10;force=true;p=false} @Self
+  - potion{type=SLOW;duration=23;level=10;force=true;p=false} @Self
+#
+StancesSet:
+  Conditions:
+  - targets{a=0} true
+  Skills:
+  - setstance{s=Combat} @Self
+
+ForothFinalForm:
+  Skills:
+  - setstance{s=Transformation} @Self
+  - aura{auraname=ForothTransformation;i=1;oT=ForothTransformation;oE=ForothTransformComplete;duration=100} @Self
+  - potion{type=INVISIBILITY;duration=100;force=true;p=false} @Self
+  - potion{type=WEAKNESS;duration=100;level=10;force=true;p=false} @Self
+  - potion{type=DAMAGE_RESISTANCE;duration=100;level=10;force=true;p=false} @Self
+  - potion{type=SLOW;duration=100;level=10;force=true;p=false} @Self
+ForothTransformation:
+  Skills:
+  - effect:particlesphere{particle=largesmoke;a=100;s=0.1;r=3;y=0.5} @origin
+  - throw{v=15;vy=3} @PIR{r=10}
+ForothTransformComplete:
+  Skills:
+  - effect:lightning @Self
+  - disguise{type=Wither} @Self
+  - sound{s=entity.wither.spawn} @Self
+  - setstance{s=Combat} @Self
+#
+ForothDeath:
+  Skills:
+  - summon{type=ForothClone;a=1} @Self
+  - summon{type=ForothFinale;a=1} @Self @Ring{r=15;points=32}
+  - remove @Self
+
+ForothFinale:
+  Skills:
+  - projectile{i=1;oT=ShadowBarrageTick;v=15;sfo=0;hp=false;syo=0;tyo=1;hnp=true;mr=15}
+
+####################################################################################
+WitheredRings:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - summon{type=WitheringRings;repeat=9;repeatInterval=5;yr=0} @RLNTE{a=3;r=10;s=4;minr=1}
+  
+WitheredRingsVisual:
+  Skills:
+  - effect:particlering{particle=largesmoke;points=32;a=1;r=3} 
+  - effect:particles{particle=smoke;a=100;hs=1;vs=0;s=0;y=0.1}
+  - potion{type=BLINDNESS;duration=40;force=true} @PIR{r=3}
+  - potion{type=SLOW;duration=40;force=true} @PIR{r=3}
+  - damage{a=6;pkb=true} @PIR{r=3}
+  - remove @Self
+
+####################################################################################
+EvokeShadows:
+  Cooldown: 35
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - summon{type=ShadowManifest;a=5;r=3;yr=0} @PIR{r=30}
+  - sound{s=entity.wither.spawn;p=1.5} @Self
+ShadowPassive1:
+  Skills:
+  - effect:particles{particle=reddust;color=#0d0d0d;amount=5;y=1;hs=0.3;vs=0.3} @Self
+ShadowPassive2:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - potion{type=BLINDNESS;duration=60;force=true} @trigger
+  - potion{type=SLOW;duration=40;force=true} @trigger
+  - remove @Self
+ShadowPassive3:
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  - remove @Self
+####################################################################################
+ShadowFracture:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - potion{type=SLOW;duration=70;level=10;force=true;p=false} @Self
+  - projectile{i=1;hugsurface=true;oT=ShadowFractureTick;oH=ShadowFractureHit;oE=ShadowFractureEnd;hs=0.1;vs=0.3;sE=false;sfo=0;mr=7;hnp=false;v=4} @Ring{radius=4;points=8}
+ShadowFractureTick:
+  Skills:
+  - effect:particles{particle=smoke;a=3;hs=0.3;y=-0.4} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=-0.2} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=0} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=0.2} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=0.4} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=0.6} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=0.8} @origin
+  - effect:particles{particle=reddust;color=#0d0d0d;a=2;y=1} @origin
+
+ShadowFractureHit:
+  Skills:
+  - damage{a=20}
+  - potion{type=BLINDNESS;duration=60;force=true}
+  - potion{type=SLOW;duration=40;force=true}
+ShadowFractureEnd:
+  Conditions:
+  Skills:
+  - delay 20
+  - summon{type=ShadowFractureMob;yr=0} @origin
+ShadowFractureEnd2:
+  Conditions:
+  Skills:
+  - remove @Self
+ShadowFractureReturn:
+  Conditions:
+  - targets{a=0} castinstead ShadowFractureRemove
+  Skills:
+  - projectile{i=1;hugsurface=true;oT=ShadowFractureTick;oH=ShadowFractureHit;oE=ShadowFractureEnd2;hs=0.1;vs=0.3;sE=false;sfo=0;mr=7;hnp=false;v=4}
+ShadowFractureRemove:
+  Skills:
+  - delay 20
+  - remove @Self
+####################################################################################
+EarthenDarknessCast1:
+  Cooldown: 35
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - skill{s=EarthenDarknessCast2} @PIR{r=30}
+  
+EarthenDarknessCast2:
+  Conditions:
+  - targets{a=1} castinstead EarthenDarkness1
+  - targets{a=2} castinstead EarthenDarkness2
+  - targets{a=3} castinstead EarthenDarkness3
+  - targets{a=4} castinstead EarthenDarkness4
+  - targets{a=5} castinstead EarthenDarkness5
+  Skills:
+  - effect:particles{particle=largesmoke;amount=50;y=1;hs=0.3;vs=0.3;s=0.1} @Self
+  
+EarthenDarkness1:
+  Skills:
+  - summon{type=CrumblingSkeleton;a=3;r=5;yr=0} @Self
+EarthenDarkness2:
+  Skills:
+  - summon{type=CrumblingSkeleton;a=6;r=5;yr=0} @Self
+EarthenDarkness3:
+  Skills:
+  - summon{type=CrumblingSkeleton;a=9;r=5;yr=0} @Self
+EarthenDarkness4:
+  Skills:
+  - summon{type=CrumblingSkeleton;a=12;r=5;yr=0} @Self
+EarthenDarkness5:
+  Skills:
+  - summon{type=CrumblingSkeleton;a=15;r=5;yr=0} @Self
+####################################################################################
+DarknessTether:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - sound{s=entity.elder_guardian.death;v=2;p=0.75} @Self
+  - aura{auraname=Tether1;i=1;duration=60;oT=DTTick1;oE=DTEnd} @Self
+  - aura{auraname=Tether2;i=10;duration=60;oT=DTTick2} @Self
+  - potion{type=SLOW;duration=60;force=true;level=1;p=false} @Self
+  - damage{a=5;pkb=true;ia=true} @PIR{r=10}
+DTTick1:
+  Skills:
+  - effect:particleline{particle=reddust;color=#0d0d0d;a=1;syo=1.75;tyo=1} @PIR{r=10}
+DTTick2:
+  Skills:
+  - potion{type=SLOW;duration=20;force=true;level=2;p=false} @PIR{r=10}
+DTEnd:
+  Skills:
+  - potion{type=SLOW;duration=60;force=true;level=10;p=false} @PIR{r=10}
+  - damage{a=5;pkb=true;ia=true} @PIR{r=10}
+####################################################################################
+ShadowVines:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - sound{s=entity.wither.shoot;p=0.6;repeat=4;repeatInterval=20} @Self
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=5;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=10;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=15;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=-5;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=-10;hs=true;sfo=0} @Forward
+  - projectile{repeat=4;repeatInterval=20;i=4;v=10;onTick=ShadowVinesTick;onHit=ShadowVinesHit;sE=false;hO=-15;hs=true;sfo=0} @Forward
+
+ShadowVinesTick:
+  Skills:
+  - effect:particles{particle=reddust;color=#0d0d0d;a=3;forwardOffset=1;y=0} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#0d0d0d;a=3;forwardOffset=1;y=0.1} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#0d0d0d;a=3;forwardOffset=1.2;y=0.2} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#272727;a=3;forwardOffset=1.4;y=0.3} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#272727;a=3;forwardOffset=1.6;y=0.3} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=1.8;y=0.4} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=2.0;y=0.3} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=2.2;y=0.3} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=2.4;y=0.2} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=2.6;y=0.1} @origin
+  - delay 1
+  - effect:particles{particle=reddust;color=#414141;a=3;forwardOffset=2.6;y=0} @origin
+
+ShadowVinesTick2:
+  Skills:
+  - effect:particles{particle=reddust;a=3} @origin
+  
+ShadowVinesHit:
+  Skills:
+  - potion{type=SLOW;level=10;duration=30;force=true}
+  - damage{a=4;pkb=true}
+####################################################################################  
+ShadowEruption:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - effect:particleline{particle=reddust;color=#0d0d0d;a=5;syo=0.1;tyo=0.1;hs=0.5;repeat=8;repeatInterval=5} @Ring{r=7;points=4}
+  - sound{s=block.note_block.basedrum;repeat=2;repeatInterval=15} @Self
+  - sound{s=block.note_block.basedrum;delay=5;repeat=2;repeatInterval=15;p=0.9} @Self
+  - potion{type=SLOW;duration=50;level=10;force=true;p=false} @Self
+  - potion{type=SLOW;duration=40;force=true;level=2} @PIR{r=7}
+  - delay 40
+  - sound{s=block.note_block.snare;p=0.6;v=1} @PIR{r=7}
+  - sound{s=item.axe.strip;p=0.5;v=2} @PIR{r=7}
+  - damage{a=10;pkb=true} @PIR{r=7}
+####################################################################################
+NecromanticRejuvination1:
+  Skills:
+  - setstance{s=Rejuvinate} @Self
+  - summon{type=ShadowDisciple;yr=0} @Ring{r=7;points=8}
+  - sound{s=entity.wither.spawn;p=1.5} @Self
+
+NecromanticRejuvination2:
+  Skills:
+  - projectile{i=1;v=8;oT=NRTick;oH=NRHit;hp=false;hnp=true} @MIR{types=Foroth;r=30}
+NRTick:
+  Skills:
+  - effect:particles{particle=reddust;color=#77FF77;a=10;hs=0.1;vs=0.1} @origin
+NRHit:
+  Skills:
+  - healpercent{m=0.005}
+####################################################################################
+ShadowBarrage:
+  Cooldown: 35
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - potion{type=SLOW;duration=100;level=10;force=true;p=false} @Self
+  - teleport{spreadh=13;spreadv=0;repeat=4;repeatInterval=20} @target
+  - delay 5
+  - sound{s=entity.wither.shoot;p=0.75;repeat=4;repeatInterval=20} @Self
+  - projectile{i=1;oT=ShadowBarrageTick;oH=ShadowBarrageHit;v=15;repeat=4;repeatInterval=20;tyo=0.8;syo=1.5;sfo=0} @target
+ShadowBarrageTick:
+  Skills:
+  - effect:particles{particle=reddust;color=#414141;a=10;hs=0.2;vs=0.2} @origin
+ShadowBarrageHit:
+  Skills:
+  - damage{a=5;pkb=true}
+  - potion{type=BLINDNESS;duration=40;force=true}
+  - potion{type=SLOW;duration=40;force=true}
+####################################################################################
+ReleaseGravity:
+  Conditions:
+  - stance{s=Combat} true
+  Skills:
+  - sound{s=entity.elder_guardian.curse;v=2;p=0.5} @Self
+  - aura{i=1;oT=ReleaseGravityTick;duration=20} @PIR{r=10}
+  - velocity{m=SET;x=0;y=1.5;z=0} @PIR{r=10}
+  - velocity{m=SET;x=0;y=-2;z=0;delay=20} @PIR{r=40}
+ReleaseGravityTick:
+  Skills:
+  - effect:particles{particle=smoke;a=25;hs=0.2;y=0.3} @origin

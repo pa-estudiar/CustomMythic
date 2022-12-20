@@ -1,0 +1,191 @@
+# Foroth Spawner
+ForothSpawner:
+  Type: ARMOR_STAND
+  Options:
+    Small: true
+    Interactable: false
+    Invincible: true
+    Invisible: true
+  Skills:
+  - skill{s=SpawnForoth} @Self ~onSpawn
+
+# Withering Rings
+WitheringRings:
+  Type: ARMOR_STAND
+  Options:
+    Small: true
+    Interactable: false
+    Invincible: true
+    Invisible: true
+  Skills:
+  - skill{s=WitheredRingsVisual} @Self ~onSpawn
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+
+# Foroth Minions
+ShadowManifest:
+  Type: ZOMBIE
+  Disguise: ShadowManifest 
+  Health: 20
+  Damage: 5
+  Options:
+    MovementSpeed: 0.30
+    PreventSunburn: true
+    Silent: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  Skills:
+  - skill{s=ShadowPassive1} @Self ~onTimer:2
+  - skill{s=ShadowPassive2} @Self ~onAttack
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+  - skill{s=ShadowPassive3} @Self ~onDeath
+#
+CrumblingSkeleton:
+  Type: SKELETON
+  Health: 20
+  Damage: 4
+  Disguise: WITHER_SKELETON 
+  Options:
+    PreventOtherDrops: true
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    MovementSpeed: 0.3
+  Equipment:
+  - Stone_Axe:0
+  Skills:
+  - effect:particles{particle=reddust;color=#555555;amount=50;y=1;hs=0.5;vs=0.5;s=0.1} @Self ~onDeath
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+  - remove @Self ~onDeath
+#
+ShadowDisciple:
+  Type: Skeleton
+  Health: 10
+  Damage: 5
+  Options:
+    PreventOtherDrops: true
+    PreventSunburn: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    MovementSpeed: 0.01
+  AITargetSelectors:
+  - 1 SpecificFaction Foroth
+  Equipment:
+  - AIR:0
+  Skills:
+  - Skill{s=NecromanticRejuvination2} @Self ~onTimer:60
+  - skill{s=ShadowPassive1} @Self ~onTimer:2
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+
+# Shadow fracture mob (No toquen)
+# This is a placeholder mob
+ShadowFractureMob:
+  Type: ARMOR_STAND
+  Options:
+    Small: true
+    Interactable: false
+    Invincible: true
+    Invisible: true
+  Skills:
+  - skill{s=ShadowFractureReturn} @MIR{types=Foroth;r=30} ~onSpawn
+  - healpercent{m=0.05} @MIR{types=Foroth;r=40} ~onPlayerKill
+
+# Foroth 
+Foroth:
+  Type: ZOMBIE
+  Display: "&8&lForoth"
+  Health: 500
+  Damage: 10
+  Faction: Foroth
+  BossBar:
+    Enabled: true
+    Style: SOLID
+    Title: "&8&lForoth &f- &4&l<mob.hp>"
+    Color: RED
+  Disguise: Enderman 
+  Options:
+    MovementSpeed: 0.22
+    PreventSunburn: true
+    Silent: true
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    PreventItemPickup: true
+    PreventJockeyMounts: true
+    PreventTransformation: true
+    KnockbackResistance: 1.0
+  LevelModifiers:
+    Health: 125
+    Damage: 1
+    MovementSpeed: 0.02
+  Modules:
+    ThreatTable: true
+  Equipment:
+  - air:0
+  DamageModifiers:
+  - ENTITY_ATTACK 0.8
+  Skills:
+# PASSIVE
+# on Spawn
+  - skill{s=ForothSpawn} @Self ~onSpawn
+  - skill{s=ForothLevelModifier} @PIR{r=40} ~onSpawn
+# on Timer
+  - heal{a=2} @Self ~onTimer:40 >50%
+  - heal{a=3} @Self ~onTimer:40 =26%-50%
+  - heal{a=4} @Self ~onTimer:40 <26%
+  - effect:particlering{particle=smoke;a=1;points=32;r=1} @Self ~onTimer:2
+# on Damaged
+  - sound{s=entity.elder_guardian.hurt;v=2;p=1.5} @Self ~onDamaged
+  - skill{s=ShadowRepel} @Self ~onDamaged 0.25
+  - skill{s=NecromanticRejuvination1} @Self ~onDamaged =75%
+  - skill{s=NecromanticRejuvination1} @Self ~onDamaged =50%
+  - skill{s=NecromanticRejuvination1} @Self ~onDamaged =10%
+  - skill{s=ForothFinalForm} @Self ~onDamaged =25%
+# other
+  - healpercent{m=0.05} @Self ~onPlayerKill
+  - skill{s=ForothDeath} @Self ~onDeath
+# ACTIVE
+  - randomskill{skills=WitheredRings,EvokeShadows,ShadowFracture,EarthenDarknessCast1,DarknessTether,ShadowVines,ShadowEruption,ShadowBarrage,ReleaseGravity} @Self ~onTimer:200
+  - skill{s=WitheredRings} @Self ~onInteract
+  - skill{s=EvokeShadows} @Self ~onInteract
+  - skill{s=ShadowFracture} @Self ~onInteract
+  - skill{s=EarthenDarknessCast1} @PIR{r=30} ~onInteract
+  - skill{s=DarknessTether} @Self ~onInteract
+  - skill{s=ShadowVines} @Self ~onTimer:200
+  - skill{s=ShadowEruption} @Self ~onInteract
+  - skill{s=ShadowBarrage} @Self ~onInteract
+  - skill{s=ReleaseGravity} @Self ~onInteract
+# FAIL SAFES
+  - skill{s=ShadowVeil} @MIR{types=ShadowManifest,CrumblingSkeleton,ShadowDisciple;r=40} ~onTimer:10
+  - skill{s=StancesSet} @MIR{types=ShadowManifest,CrumblingSkeleton,ShadowDisciple;r=40} ~onTimer:10
+
+# Death Animation DEATH ANIMATION
+ForothClone:
+  Type: ARMOR_STAND
+  Disguise: Wither
+  Options:
+    Interactable: false
+    Invincible: true
+    Invisible: false
+  Skills:
+  - effect:particletornado{particle=largesmoke;mr=3;height=1.25;i=1;duration=160;rs=1;sh=2;cp=smoke;cyo=0.1;cps=0.1;a=2;yo=0;s=0.1} @Self ~onSpawn
+  - effect:lightning{repeat=2;repeatInterval=79} @Self ~onSpawn
+  - effect:particles{particle=largesmoke;a=200;y=1;vs=0.2;hs=0.2;s=0.2;delay=160} @Self ~onSpawn
+  - effect:particles{particle=largeexplode;a=1;y=1;delay=160} @Self ~onSpawn
+  - sound{s=block.portal.trigger;p=0.5} @Self ~onSpawn
+  - signal{s=ForothFinale} @MIR{types=ForothFinale;r=30;sort=RANDOM;limit=2} ~onTimer:5
+  - sound{s=ui.toast.challenge_complete;p=0.75;v=2;delay=160} @Self ~onSpawn
+  - remove{delay=160} @Self ~onSpawn
+
+ForothFinale:
+  Type: ARMOR_STAND
+  Options:
+    Small: true
+    Interactable: false
+    Invincible: true
+    Invisible: true
+  Skills:
+  - skill{s=ForothFinale} @MIR{types=ForothClone;r=30} ~onSignal:ForothFinale
+  - remove{delay=160} @Self ~onSpawn
